@@ -1,0 +1,143 @@
+/* Full-page gradient background */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #4f46e5, #9333ea, #06b6d4);
+  background-size: 300% 300%;
+  animation: gradientShift 12s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #fff;
+}
+
+/* Glassy neon container */
+.container {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 35px 40px;
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  width: 360px;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Title with gradient + glow */
+/* Title in solid black */
+/* Title in solid black on white background */
+h1 {
+  margin-bottom: 25px;
+  font-size: 30px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #000000;           /* solid black text */
+  background: #ffffff;      /* white background */
+  padding: 10px 18px;       /* space around text */
+  border-radius: 10px;      /* rounded corners */
+  display: inline-block;    /* shrink to text width */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* subtle shadow */
+}
+
+/* Grid layout for selects */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.input-group, .output-group {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #f1f5f9;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+input:focus, select:focus {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+}
+
+/* Gradient button with glow */
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  background: linear-gradient(135deg, #3b82f6, #9333ea, #f43f5e);
+  background-size: 300% 300%;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  animation: gradientShift 8s ease infinite;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.7);
+}
+
+/* Result box with glowing gradient border */
+.output-group {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 14px;
+  border-radius: 14px;
+  border: 2px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+  background-image: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0)),
+                    linear-gradient(135deg, #06b6d4, #9333ea, #f43f5e);
+}
+
+/* Result text with gradient + glow */
+#result {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 8px;
+  background: linear-gradient(90deg, #38bdf8, #a855f7, #f43f5e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.6),
+               0 0 12px rgba(168, 85, 247, 0.6);
+  word-break: break-word;
+  text-align: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
